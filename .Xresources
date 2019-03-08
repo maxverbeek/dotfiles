@@ -1,0 +1,15 @@
+#include ".config/colors/nord"
+
+URxvt.perl-ext-common: default,keyboard-select,clipboard
+URxvt.font: xft:DejaVu Sans Mono:antialiasing=true:size=12, xft:FontAwesome:antialiasing=true:size=12
+URxvt.scrollBar: false
+URxvt.keyboard-select.clipboard: true
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-f: perl:keyboard-select:search
+URxvt.keysym.M-s: perl:keyboard-select:activate
+URxvt.keysym.M-v: eval:paste_clipboard
+URxvt.keysym.M-c: eval:selection_to_clipboard
+URxvt.keysym.C-Up:    \033[1;5A
+URxvt.keysym.C-Down:  \033[1;5B
+URxvt.keysym.C-Right: \033[1;5C
+URxvt.keysym.C-Left:  \033[1;5D

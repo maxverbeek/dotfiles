@@ -1,0 +1,143 @@
+[colors]
+white = #FFFFFF
+black = #000000
+
+foreground = ${colors.white}
+background = #69000000
+linecolor  = ${colors.foreground}
+focusbackground = #96000000
+focuslinecolor  = ${colors.foreground}
+
+[bar/top]
+width = 100%
+height = 38
+pin-workspaces = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+underline-color = ${colors.linecolor}
+underline-size  = 3
+
+font-0 = Noto Sans:size=12;2
+font-1 = Font Awesome 5 Pro:size=12;3
+font-2 = Font Awesome 5 Brands:size=12;1
+font-3 = Font Awesome 5 Pro Solid:size=12:weight=bold;-2
+
+modules-left = bspwm
+modules-center = xwindow
+modules-right = wireless pulseaudio battery date
+
+wm-restack = bspwm
+
+tray-position = right
+tray-detached = false
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = term;
+ws-icon-1 = web;
+ws-icon-2 = code;
+ws-icon-3 = gfx;
+ws-icon-default = 
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.focusbackground}
+label-focused-underline  = ${colors.linecolor}
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = #33ffffff
+label-empty-padding = 4
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:64:...%
+label-padding = 4
+
+[module/battery]
+type = internal/battery
+
+label-charging = %percentage%
+format-charging = <animation-charging> <label-charging>%
+format-charging-padding = 3
+
+label-discharging = %percentage%
+format-discharging = <ramp-capacity> <label-discharging>%
+format-discharging-padding = 3
+
+label-full = %percentage%
+format-full = <ramp-capacity> <label-full>%
+format-full-padding = 3
+
+poll-interval = 10
+full-at = 99
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+
+date = %a %d %b
+time = %H:%M
+
+label = %date%, %time%
+format =  <label>
+format-padding = 3
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-volume = "%percentage%%"
+label-muted  =  %percentage%%
+
+format-volume = <ramp-volume> <label-volume>
+format-muted  = <label-muted>
+format-volume-padding = 3
+format-muted-padding = 3
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-3 = ""
+ 
+[module/wireless]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+#format-connected = %{A1:nm-connection-editor &:}<ramp-signal> <label-connected>%{A}
+#format-disconnected = %{A1:nm-connection-editor &:}<label-disconnected>%{A}
+format-connected = %{A1:networkmanager_dmenu &:}%{A3:nm-connection-manager &:}<ramp-signal> <label-connected>%{A}%{A}
+format-disconnected = %{A1:networkmanager_dmenu &:}%{A3:nm-connection-manager &:}<label-disconnected>%{A}%{A}
+format-connected-padding = 3
+format-disconnected-padding = 3
+format-connected-background = ${colors.focusbackground}
+format-disconnected-background = ${colors.focusbackground}
+
+label-connected = %essid%
+label-disconnected = ""
+
+ramp-signal-0 = %{T4}%{T-}
+ramp-signal-1 = %{T4}%{T-}
+ramp-signal-2 = %{T4}%{T-}
+ramp-signal-3 = %{T4}%{T-}
