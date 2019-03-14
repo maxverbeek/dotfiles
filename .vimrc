@@ -1,2 +1,4 @@
 syntax on
-colorscheme nord
+
+colorscheme default
+set t_Co=16

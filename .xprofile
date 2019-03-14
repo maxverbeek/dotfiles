@@ -1,2 +1,1 @@
-PATH=$HOME/.local/bin:$PATH
-PATH=$PATH:$GOPATH/bin
+PATH=$HOME/.local/bin:$PATH:$GOPATH/bin
