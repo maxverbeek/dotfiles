@@ -6,6 +6,9 @@ sxhkd &
 # set cursor to a pointer instead of a cross (bspwm background)
 xsetroot -cursor_name left_ptr
 
+# screenlocker
+xss-lock lock &
+
 # start compton
 compton --config $HOME/.config/compton/compton.conf -b
 

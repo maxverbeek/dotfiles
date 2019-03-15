@@ -1,0 +1,26 @@
+#!/bin/bash
+
+COLBG="$(xrdb -q | grep .background | cut -f2 | cut -c 2-)FF"
+COLFG="$(xrdb -q | grep .foreground | cut -f2 | cut -c 2-)FF"
+
+COLCYN="$(xrdb -q | grep color6: | cut -f2 | cut -c 2-)FF"
+COLGRN="$(xrdb -q | grep color2: | cut -f2 | cut -c 2-)FF"
+COLRED="$(xrdb -q | grep color1: | cut -f2 | cut -c 2-)FF"
+COLYEL="$(xrdb -q | grep color3: | cut -f2 | cut -c 2-)FF"
+
+/usr/bin/i3lock \
+    --blur=6 \
+    --indicator \
+    --insidecolor=$COLBG \
+    --ringcolor=$COLBG \
+    --line-uses-ring \
+    --separatorcolor=00000000 \
+    --verifcolor=$COLYEL \
+    --wrongcolor=$COLRED \
+    --keyhlcolor=$COLGRN \
+    --bshlcolor=$COLRED \
+    --insidevercolor=$COLYEL \
+    --ringvercolor=$COLYEL \
+    --insidewrongcolor=$COLRED \
+    --ringwrongcolor=$COLRED \
+    --layoutcolor=$COLFG 
