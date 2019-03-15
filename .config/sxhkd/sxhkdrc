@@ -42,6 +42,10 @@ XF86AudioLowerVolume
 	pactl set-sink-mute 0 0; \
 	pactl set-sink-volume 0 -5%
 
+# Lock screen
+XF86ScreenSaver
+	lock
+
 # bspwm hotkeys
 #
 
