@@ -2,13 +2,17 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
+# terminal emulator in current workingdir
 super + Return
-	urxvt
+    alacritty --working-directory=$(xcwd)
+
+# terminal in current home
+super + shift + Return
+    alacritty
 
 # program launcher
 super + space
-	rofi -show run
+	rofi -show drun
 
 # program switcher
 mod1 + Tab
@@ -42,12 +46,24 @@ XF86AudioLowerVolume
 	pactl set-sink-mute 0 0; \
 	pactl set-sink-volume 0 -5%
 
+# screenshots
+Print
+    maim -s -d 0.2 -u /tmp/screenshot.png && xclip -selection c -t image/png < /tmp/screenshot.png
+
+shift + Print
+    maim /tmp/screenshot.png && xclip -selection c -t image/png < /tmp/screenshot.png
+
 # Lock screen
 XF86ScreenSaver
 	lock
 
 # bspwm hotkeys
 #
+super + {_,shift} + r
+    bspc node @/ -C {forward,backward}
+
+super + {_,alt} + b
+    bspc node @{parent,/} -B
 
 # quit bspwm normally
 super + alt + Escape
