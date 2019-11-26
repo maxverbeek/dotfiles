@@ -1,4 +1,4 @@
-#include ".config/colors/nord"
+#include ".config/colors/onedark"
 
 URxvt.perl-ext-common: default,keyboard-select,clipboard
 URxvt.font: xft:DejaVu Sans Mono:antialiasing=true:size=12, xft:FontAwesome:antialiasing=true:size=12
