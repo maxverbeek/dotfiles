@@ -1,0 +1,10 @@
+[Unit]
+Description=Handle three finger gestures
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/libinput-gestures-setup start
+ExecStop=/usr/bin/libinput-gestures-setup stop
