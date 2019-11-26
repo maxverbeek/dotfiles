@@ -1,4 +1,4 @@
 export PATH=$HOME/.local/bin:$PATH:$GOPATH/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
-export EDITOR=vim
+export EDITOR=nvim
 

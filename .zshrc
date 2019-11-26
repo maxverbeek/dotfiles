@@ -62,7 +62,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions thefuck fzf)
+plugins=(git zsh-autosuggestions thefuck fzf zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +97,8 @@ source $ZSH/oh-my-zsh.sh
 alias shutdown="sudo shutdown now"
 alias reboot="sudo reboot now"
 alias zathura="zathura --fork"
+alias vim="nvim"
+alias open="xdg-open"
 
 bindkey -M main '' backward-kill-word
 bindkey -M main '[3^' kill-word
