@@ -9,6 +9,9 @@ xsetroot -cursor_name left_ptr
 # screenlocker
 xss-lock lock &
 
+# nicer key repeat rate
+xset r rate 250 50
+
 # start compton
 compton --config $HOME/.config/compton/compton.conf -b
 
@@ -23,8 +26,9 @@ bspc monitor eDP1 -d term web code misc gfx
 
 bspc config border_width         4
 bspc config window_gap          14
+bspc config single_monocle      true
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -36,7 +40,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a Zathura state=tiled
 
-bspc config normal_border_color    $(xrdb -q | grep color3 | cut -f2) # yellow
-bspc config focused_border_color   $(xrdb -q | grep color2 | cut -f2) # green
-bspc config urgent_border_color    $(xrdb -q | grep color1 | cut -f2) # red
-bspc config presel_feedback_color  $(xrdb -q | grep color4 | cut -f2) # blue
+bspc config normal_border_color   "#FFFFFF" # $(xrdb -q | grep color3 | cut -f2) # yellow
+bspc config focused_border_color  "#FFFFFF" # $(xrdb -q | grep color2 | cut -f2) # green
+bspc config urgent_border_color   "#FFFFFF" # $(xrdb -q | grep color1 | cut -f2) # red
+bspc config presel_feedback_color "#FFFFFF" # $(xrdb -q | grep color4 | cut -f2) # blue
