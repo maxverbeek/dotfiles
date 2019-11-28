@@ -1,8 +1,9 @@
 [Unit]
 Description=Handle three finger gestures
+Wants=sddm.service
 
 [Install]
-WantedBy=default.target
+WantedBy=xsession.target
 
 [Service]
 Type=forking

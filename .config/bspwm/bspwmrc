@@ -21,6 +21,9 @@ compton --config $HOME/.config/compton/compton.conf -b
 # polybar
 $HOME/.config/polybar/launch.sh
 
+# tell systemd an Xsession has started
+systemctl --user --no-block start xsession.target
+
 # actual config
 bspc monitor eDP1 -d term web code misc gfx
 
