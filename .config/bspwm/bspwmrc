@@ -6,14 +6,14 @@ sxhkd &
 # set cursor to a pointer instead of a cross (bspwm background)
 xsetroot -cursor_name left_ptr
 
+# start compton
+picom --config $HOME/.config/picom/picom.conf -b --experimental-backends
+
 # screenlocker
 xss-lock lock &
 
 # nicer key repeat rate
 xset r rate 250 50
-
-# start compton
-compton --config $HOME/.config/compton/compton.conf -b
 
 # set background
 [ -f $HOME/.fehbg ] && $HOME/.fehbg
@@ -37,6 +37,7 @@ bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off

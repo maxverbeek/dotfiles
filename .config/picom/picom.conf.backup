@@ -1,0 +1,34 @@
+backend = "glx";
+
+glx-no-stencil = true;
+glx-copy-from-front = false;
+glx-use-copysubbuffermesa = true;
+glx-no-rebind-pixmap = true;
+
+shadow = true;
+shadow-radius = 6;
+shadow-opacity = 0.4
+shadow-offset-x = -4;
+shadow-offset-y = -6;
+
+shadow-exclude = [
+	"name = 'Polybar tray window'",
+	"class_g = 'Bspwm' && class_i = 'presel_feedback'"
+];
+
+no-dock-shadow = true;
+
+opacity-rule = [ "40:class_g = 'Bspwm' && class_i = 'presel_feedback'" ];
+
+blur-background = true;
+blur-kern = "7x7box";
+blur-background-exclude = [
+	"class_g = 'Bspwm' && class_i = 'presel_feedback'"
+];
+
+wintypes: {
+	tooltip = { fade = true; shadow = false; }
+	menu = { shadow = false; }
+	dropdown_menu = { shadow = false; }
+	popup_menu = { shadow = false; }
+};
