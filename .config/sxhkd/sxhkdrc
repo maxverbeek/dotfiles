@@ -4,11 +4,11 @@
 
 # terminal emulator in current workingdir
 super + Return
-    alacritty --working-directory=$(xcwd)
+    kitty -d $(xcwd)
 
 # terminal in current home
 super + shift + Return
-    alacritty
+    kitty
 
 # program launcher
 super + space
@@ -36,15 +36,15 @@ XF86MonBrightnessUp
 
 # audio control
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 XF86AudioRaiseVolume
-	pactl set-sink-mute 0 0; \
-	pactl set-sink-volume 0 +5%
+	pactl set-sink-mute @DEFAULT_SINK@ 0; \
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume
-	pactl set-sink-mute 0 0; \
-	pactl set-sink-volume 0 -5%
+	pactl set-sink-mute @DEFAULT_SINK@ 0; \
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # screenshots
 Print
@@ -83,7 +83,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags

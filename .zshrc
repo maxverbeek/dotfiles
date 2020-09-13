@@ -102,3 +102,5 @@ alias open="xdg-open"
 
 bindkey -M main '' backward-kill-word
 bindkey -M main '[3^' kill-word
+
+source /home/max/.config/broot/launcher/bash/br

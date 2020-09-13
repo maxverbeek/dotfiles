@@ -141,3 +141,13 @@ ramp-signal-0 = %{T4}%{T-}
 ramp-signal-1 = %{T4}%{T-}
 ramp-signal-2 = %{T4}%{T-}
 ramp-signal-3 = %{T4}%{T-}
+
+[module/bluetooth]
+type = custom/script
+exec = $HOME/.config/polybar/modules/polybar-bluetooth/bluetooth.sh
+interval = 3
+click-left = exec $HOME/.config/polybar/modules/polybar-bluetooth/toggle_bluetooth.sh
+click-right = exec blueberry &
+format-padding = 3
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
