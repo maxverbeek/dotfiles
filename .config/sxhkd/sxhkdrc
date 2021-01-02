@@ -4,7 +4,7 @@
 
 # terminal emulator in current workingdir
 super + Return
-    kitty -d $(xcwd)
+    kitty -d "$(xcwd)"
 
 # terminal in current home
 super + shift + Return

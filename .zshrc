@@ -68,6 +68,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH=$PATH:$HOME/.cargo/bin
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -99,6 +101,8 @@ alias reboot="sudo reboot now"
 alias zathura="zathura --fork"
 alias vim="nvim"
 alias open="xdg-open"
+alias git="noglob git"
+alias kp="kubectl -n parcooling"
 
 bindkey -M main '' backward-kill-word
 bindkey -M main '[3^' kill-word
